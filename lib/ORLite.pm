@@ -1135,7 +1135,7 @@ all code is generated into the table class directly, which can make
 overriding method difficult.
 
 The C<shim> option will make ORLite generate all of it's methods into a
-seperate C<Foo::TableName::Shim> class, and leave the main table class
+separate C<Foo::TableName::Shim> class, and leave the main table class
 C<Foo::TableName> as a transparent subclass of the shim.
 
 This allows you to alter the behaviour of a table class without having
@@ -1166,7 +1166,7 @@ connecting to your database. There'll be more in the future.
 =head1 ROOT PACKAGE METHODS
 
 All ORLite root packages receive an identical set of methods for
-controlling connections to the database, transactions, and the issueing
+controlling connections to the database, transactions, and the issuing
 of queries of various types to the database.
 
 The example root package Foo::Bar is used in any examples.
@@ -1201,7 +1201,7 @@ never hold onto a connection beyond the immediate scope.
 
 The transaction system in ORLite is specifically designed so that code
 using the database should never have to know whether or not it is in a
-transation.
+transaction.
 
 Because of this, you should B<never> call the -E<gt>disconnect method
 on the database handles yourself, as the handle may be that of a
@@ -1477,7 +1477,7 @@ C<base> method.
   print Foo::Bar::UserData->table; # 'user_data'
 
 While you should not need the name of table for any simple operations,
-from time to time you may need it programatically. If you do need it,
+from time to time you may need it programmatically. If you do need it,
 you can use the C<table> method to get the table name.
 
 =head2 table_info
