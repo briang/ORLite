@@ -9,7 +9,7 @@ BEGIN {
 
 use Test::More tests => 4;
 use File::Spec::Functions ':ALL';
-use t::lib::Test;
+BEGIN { require "./t/lib/Test.pm"; t::lib::Test->import() }
 
 
 #####################################################################

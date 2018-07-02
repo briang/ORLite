@@ -9,7 +9,7 @@ BEGIN {
 
 use Test::More tests => 7;
 use File::Spec::Functions ':ALL';
-use t::lib::Test;
+BEGIN { require "./t/lib/Test.pm"; t::lib::Test->import() }
 
 
 
@@ -30,9 +30,11 @@ eval <<"END_PERL"; die $@ if $@;
 package t::lib;
 
 use strict;
-use ORLite {
-	file => '$file',
-};
+BEGIN {
+  require ORLite;
+  local \@INC=(\@INC, '.');
+  ORLite->import({ file => '$file' });
+}
 
 1;
 END_PERL

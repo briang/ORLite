@@ -11,7 +11,7 @@ BEGIN {
 
 use Test::More tests => 51;
 use File::Spec::Functions ':ALL';
-use t::lib::Test;
+BEGIN { require "./t/lib/Test.pm"; t::lib::Test->import() }
 
 # Set up the database
 my $file = test_db();

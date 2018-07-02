@@ -1,3 +1,4 @@
+use lib '.';
 use inc::Module::Install::DSL 1.06;
 
 all_from      lib/ORLite.pm

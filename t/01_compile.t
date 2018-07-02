@@ -10,7 +10,7 @@ BEGIN {
 use Test::More tests => 3;
 
 require_ok( 'ORLite' );
-require_ok( 't::lib::Test' );
+require_ok( './t/lib/Test.pm' );
 
 is(
 	$ORLite::VERSION,

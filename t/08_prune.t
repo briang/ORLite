@@ -12,7 +12,7 @@ BEGIN {
 use Test::More tests => 7;
 use Test::Script;
 use File::Remove;
-use t::lib::Test;
+BEGIN { require "./t/lib/Test.pm"; t::lib::Test->import() }
 
 # Where the test file will be
 my $file = test_db();

@@ -19,7 +19,7 @@ BEGIN {
 	}
 }
 use File::Spec::Functions ':ALL';
-use t::lib::Test;
+BEGIN { require "./t/lib/Test.pm"; t::lib::Test->import() }
 
 
 
