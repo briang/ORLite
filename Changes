@@ -1,5 +1,11 @@
 Changes for Perl extension ORLite
 
+1.98_01 Mon 01 Jul 2018
+        - add LICENCE file, as per documentation
+        - fix dot-in-inc issues [rt#122383]
+        - fix SQL VACUUM statements in tests [rt#118460,124854]
+        - fix pod spelling [rt#64986]
+
 1.98 Sat 29 Sep 2012
 	- When setting pragmas in void context, skip reading the changed
 	  pragma back out of the database pointlessly.
@@ -213,7 +219,7 @@ Changes for Perl extension ORLite
 1.24 Sat 15 Aug 2009
 	- Adding support for an iterate method
 
-1.23 Thu 11 Jun 2009 
+1.23 Thu 11 Jun 2009
 	- Fixed a bug in method ->delete which deleted more than the actual
 	  object in case the primary key consist of more than one column.
 	  Added basic support for such primary keys with more than one column.
