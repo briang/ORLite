@@ -1,0 +1,72 @@
+# -*- perl -*-
+
+use ExtUtils::MakeMaker 6.64;
+use File::Spec::Functions qw(catfile);
+
+my  $NAME    = 'Alt::ORLite::BRIANG';                # Foo::Bar
+(my $PROJECT = lc "p5-$NAME") =~ s|::|-|g;           # p5-foo-bar
+my $MAIN = catfile( 'lib', split /::/, "$NAME.pm" ); # lib/Foo/Bar.pm
+
+my %makefile_data = (
+    MIN_PERL_VERSION => '5.006',
+
+    NAME          => $NAME,
+    ABSTRACT_FROM => $MAIN,
+    VERSION_FROM  => $MAIN,
+    AUTHOR        => 'Brian Greenfield <briang@cpan.org>',
+    LICENSE       => 'perl_5',
+
+    CONFIGURE_REQUIRES => {
+        File::Spec::Functions => 0,
+        ExtUtils::MakeMaker   => '6.59',
+    },
+    BUILD_REQUIRES => {
+    },
+    PREREQ_PM => {
+        DBD::SQLite  => '1.27',
+        DBI          => '1.607',
+        File::Path   => '2.08',
+        File::Remove => '1.40',
+        File::Spec   => '3.2701',
+        File::Temp   => '0.20',
+        Params::Util => '1.00',
+        strict       => 0,
+        vars         => 0,
+        warnings     => 0,
+    },
+    TEST_REQUIRES => {
+        Test::More   => '0.47',
+        Test::Script => '1.06',
+    },
+
+    META_MERGE => {
+        "meta-spec" => { version => 2 },
+        no_index => {
+            package => 'ORLite',
+        },
+        resources => {
+            license     => [ 'http://dev.perl.org/licenses/' ],
+            bugtracker  => {
+                web     => "https://github.com/briang/$PROJECT/issues",
+            },
+            repository  => {
+                url  => "git://github.com/briang/$PROJECT.git",
+                web  => "https://github.com/briang/$PROJECT",
+                type => 'git',
+            },
+        },
+        prereqs => {
+            test => {
+                recommends => {
+                    CPAN::Meta  => '2.120900',
+                },
+            },
+            runtime => {
+                recommends => {
+                },
+            },
+        },
+    },
+);
+
+WriteMakefile( %makefile_data );
