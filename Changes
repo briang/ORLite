@@ -1,10 +1,17 @@
-Changes for Perl extension ORLite
+Changes for Perl extension Alt::ORLite::BRIANG
 
-1.98_01 Mon 01 Jul 2018
+0.01_01 Fri 06 Jul 2018
+
+        - add tests for MANIFEST and up-to-date README.md
+        - auto generate a readme
+        - move toward ExtUtils::MakeMaker based dist
+        - add lib/Alt/ORLite/BRIANG.pm
         - add LICENCE file, as per documentation
         - fix dot-in-inc issues [rt#122383]
         - fix SQL VACUUM statements in tests [rt#118460,124854]
         - fix pod spelling [rt#64986]
+
+Changes for Perl extension ORLite
 
 1.98 Sat 29 Sep 2012
 	- When setting pragmas in void context, skip reading the changed
