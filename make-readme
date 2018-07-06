@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# requires Pod::Markdown
+
+cat ./lib/Alt/ORLite/BRIANG.pm | pod2markdown > README.md
